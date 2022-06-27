@@ -1,0 +1,80 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+.flex-col {
+    display: flex;
+    flex-flow: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row;
+}
+
+.login-area {
+    display: flex;
+    flex-flow: column;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.login-area > .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-area > .flex-row:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.login-area .category-field {
+    width: 50px;
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: right;
+    align-self: center;
+}
+
+.login-area .input-field {
+    font-size: 20px;
+    outline: none;
+    border: 1px solid black;
+    flex: 1;
+}
+
+.login-area .login-buttons {
+    width: 70px;
+    height: 30px;
+    outline: none;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 15px;
+}
+
+.login-area .flex-row .login-buttons:not(:last-child) {
+    margin-right: 5px;
+}
+
+#btn_login {
+    background-color: slateblue;
+    color: white;
+}
+
+#btn_login:active {
+    box-shadow: inset 0 0 10px lightgray;
+}
+
+#btn_cancel {
+    /* background-color: orangered; */
+    color: orangered;
+    text-align: center;
+    line-height: 30px;
+}
+
+#btn_cancel:active {
+    box-shadow: inset 0 0 10px lightgray;
+}
