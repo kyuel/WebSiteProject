@@ -255,4 +255,20 @@ public class CRUD_OBJECT {
 		this.close();
 		return res;
 	}
+	public boolean delete_post(String title, String content, String id) {
+		this.open();
+		boolean res;
+		try {
+			Statement stmt = this.con.createStatement();
+			stmt.executeQuery(String.format("delete POST where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content, id));
+			res = true;
+		}
+		catch(SQLException e) {
+			res = false;
+			e.printStackTrace();
+		}
+		
+		this.close();
+		return res;
+	}
 }

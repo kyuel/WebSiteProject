@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>Post Manage</title>
 
     <!-- Custom fonts for this template-->
     <link href="../css/fontawesome/all.min.css" rel="stylesheet" type="text/css">
@@ -63,24 +63,24 @@
             <%
             if(Stores.is_login && Stores.user.auth.equals("admin")){
             %>
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-	        <div class="sidebar-heading">
-                Admin
-            </div>
-
-            <!-- Nav Item -  -->
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/UserManage.jsp">
-                    <span>User Manage</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="../admin/PostManage.jsp">
-                    <span>Post Manage</span></a>
-            </li>
+	            <hr class="sidebar-divider">
+	
+	            <!-- Heading -->
+		        <div class="sidebar-heading">
+	                Admin
+	            </div>
+	
+	            <!-- Nav Item -  -->
+	            <li class="nav-item">
+	                <a class="nav-link" href="../admin/UserManage.jsp">
+	                    <span>User Manage</span></a>
+	            </li>
+	
+	            <!-- Nav Item - Tables -->
+	            <li class="nav-item">
+	                <a class="nav-link" href="../admin/PostManage.jsp">
+	                    <span>Post Manage</span></a>
+	            </li>
             <%
             }
             %>
@@ -125,27 +125,25 @@
                    <!-- Page Heading -->
 				<h1 class="h3 mb-4 text-gray-800">Posts Manage</h1>
                    <div class="row">
-                           <!-- Circle Buttons -->
-                       <!-- <div class="card shadow mb-4">
-                           <div class="card-header py-3">
-                               <h6 class="m-0 font-weight-bold text-primary">제목</h6>
-                           </div>
-                           <div class="card-body">
-                               <p>내용</p>
-                           </div>
-                       </div> -->
 					<%
 					for(int i = 0 ; i<posts.length ; i++){
 					%>
 						<div class="card shadow mb-4">
 							<div class="card-header py-3">
 								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
+								
 						        	<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
 						        </a>
-						    </div>
+							</div>
 						    <div class="card-body">
 						        <p><%=posts[i].content %></p>
 						    </div>
+						</div>
+						<div class="edit_delete">
+							<a href="PostEdit.jsp?id=<%=posts[i].id %>&title=<%=posts[i].title %>" class="button-user-control">수정</a>
+							<a onclick="return confirm('정말로 삭제하시겠습니까?')" 
+							href="TryPostDelete.jsp?title=<%=posts[i].title %>&content=<%=posts[i].content %>&id=<%=posts[i].id %>" 
+							class="button-user-control">삭제</a>
 						</div>
 					<%	
 					}
