@@ -13,7 +13,6 @@
 <head>
 	<%
 		CRUD_OBJECT crud = new CRUD_OBJECT(application);
-		//UserModel model = crud.get_user("admin", "admin");
 		PostModel[] posts = crud.get_posts();
 	%>
     <meta charset="utf-8">
@@ -124,31 +123,33 @@
 			<div class="container-fluid">
                    <!-- Page Heading -->
 				<h1 class="h3 mb-4 text-gray-800">Posts Manage</h1>
-                   <div class="row">
-					<%
-					for(int i = 0 ; i<posts.length ; i++){
-					%>
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
-								
-						        	<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
-						        </a>
-							</div>
-						    <div class="card-body">
-						        <p><%=posts[i].content %></p>
-						    </div>
-						</div>
-						<div class="edit_delete">
-							<a href="PostEdit.jsp?id=<%=posts[i].id %>&title=<%=posts[i].title %>" class="button-user-control">수정</a>
-							<a onclick="return confirm('정말로 삭제하시겠습니까?')" 
-							href="TryPostDelete.jsp?title=<%=posts[i].title %>&content=<%=posts[i].content %>&id=<%=posts[i].id %>" 
-							class="button-user-control">삭제</a>
-						</div>
-					<%	
-					}
-					%>             
-				</div>
+					<table class="table-user">
+						<thead>
+							<tr>
+								<th>TITLE</th>
+	                   			<th>CONTENT</th>
+	                   			<th>ID</th>
+	                   			<th></th>
+                   			</tr>
+						</thead>
+					<tbody>
+						<%
+						for(int i = 0 ; i<posts.length ; i++){
+						%>
+							<tr>
+								<td><%=posts[i].title %></td>
+								<td><%=posts[i].content %></td>
+								<td><%=posts[i].id %></td>
+								<td>
+									<a href="PostEdit.jsp?title=<%=posts[i].title %>&content=<%=posts[i].content %>&id=<%=posts[i].id%>" class="button-user-control">수정</a>
+									<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="TryPostDelete.jsp?title=<%=posts[i].title %>&content=<%=posts[i].content %>&id=<%=posts[i].id %>" class="button-user-control">삭제</a>
+								</td>
+							</tr>
+						<%	
+						}
+						%> 
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>   

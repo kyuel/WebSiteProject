@@ -124,7 +124,6 @@
 			</nav>
 			<div class="container-fluid">
                    <!-- Page Heading -->
-				<h1 class="h3 mb-4 text-gray-800">Posts</h1>
                    <div class="row">
 					<%
 					for(int i = 0 ; i<posts.length ; i++){

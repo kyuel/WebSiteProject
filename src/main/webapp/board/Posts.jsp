@@ -13,7 +13,6 @@
 <head>
 	<%
 		CRUD_OBJECT crud = new CRUD_OBJECT(application);
-		//UserModel model = crud.get_user("admin", "admin");
 		PostModel[] posts = crud.get_posts();
 	%>
     <meta charset="utf-8">
@@ -36,98 +35,75 @@
 	<link href="css/styles.css" rel="stylesheet">
 </head>
 <body id="page-top" style="overflow:hidden;">
-	<script>
-	var modal_logout = new bootstrap.Modal("#logoutModal");
-	</script>
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        
-
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            
-            <div id="content">
-
-               
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                     <a class="btn btn-link mr-3" href="../mainpage/MainPage.jsp">
+	<!-- Page Wrapper -->
+	<div id="wrapper">    
+		<div id="content-wrapper" class="d-flex flex-column">        
+			<div id="content">          
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+					<a class="btn btn-link mr-3" href="../mainpage/MainPage.jsp">
 						◀
-                    </a>
-                    
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow">
-                        	
-                            <a class="nav-link" href="#" role="button" onclick="document.querySelector('#user_dropdown').style.display='block'">
-                                <img class="img-profile" src="../img/sign-<%=Stores.is_login ? "out" : "in" %>-alt.svg">
-                            </a>
-                            
-                            <div class="dropdown-menu dropdown-menu-right shadow" id="user_dropdown">
-<%
-if(Stores.is_login){
-%>
-<div class="dropdown-item" onclick="document.querySelector('#user_dropdown').style.display='none'">
-<%= Stores.user.id %>
-</div>
-<a class="dropdown-item" href="../board/Logout.jsp">
-Logout
-</a>
-<%	
-}
-else{
-%>
-<a class="dropdown-item" href="../board/Login.jsp?cancel_url=mainpage/MainPage.jsp">
-Login
-</a>
-<a class="dropdown-item" href="../board/Signup.jsp?res=true&cancel_url=mainpage/MainPage.jsp">
-Sign-up
-</a>
-<%
-    }
-%>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Posts</h1>
-
-
-                            <!-- Circle Buttons -->
-                        <!-- <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">제목</h6>
-                            </div>
-                            <div class="card-body">
-                                <p>내용</p>
-                            </div>
-                        </div> -->
-				<%
-					for(int i = 0 ; i<posts.length ; i++){
-				%>
-					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
-								<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
+					</a>
+					
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown no-arrow">	
+							<a class="nav-link" href="#" role="button" onclick="document.querySelector('#user_dropdown').style.display='block'">
+								<img class="img-profile" src="../img/sign-<%=Stores.is_login ? "out" : "in" %>-alt.svg">
 							</a>
+							
+							<div class="dropdown-menu dropdown-menu-right shadow" id="user_dropdown">
+								<%
+								if(Stores.is_login){
+								%>
+									<div class="dropdown-item" onclick="document.querySelector('#user_dropdown').style.display='none'">
+										<%= Stores.user.id %>
+									</div>
+									<a class="dropdown-item" href="../board/Logout.jsp">
+										Logout
+									</a>
+								<%	
+								}
+								else{
+								%>
+									<a class="dropdown-item" href="../board/Login.jsp?cancel_url=mainpage/MainPage.jsp">
+										Login
+									</a>
+									<a class="dropdown-item" href="../board/Signup.jsp?res=true&cancel_url=mainpage/MainPage.jsp">
+										Sign-up
+									</a>
+								<%
+								}
+								%>
+	            			</div>
+	            		</li>
+					</ul>
+				</nav>
+				<!-- Posts Print -->
+				<div class="container-fluid">
+   						<!-- Page Heading -->
+					<h1 class="h3 mb-4 text-gray-800">Posts</h1>
+					<%
+					for(int i = 0 ; i<posts.length ; i++){
+					%>
+						<div class="card shadow mb-4">	
+							<div class="card-header py-3">
+								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
+									<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
+								</a>
+							</div>
+							<div class="card-body">
+								<p><%=posts[i].content %></p>
+							</div>
 						</div>
-						<div class="card-body">
-							<p><%=posts[i].content %></p>
-						</div>
-					</div>
-				<%	
-				}
-				%>      
-				<div style="display:flex; flex-flow:row;">
-                   	 <div style="flex:1;"></div>
-                   	 <a id="btn_write" class="post-control-btn" href="PostWrite.jsp">작성</a>
-				</div>       
+					<%	
+					}
+					%>      
+					<div style="display:flex; flex-flow:row;">
+						<div style="flex:1;"></div>
+	                  		 <a id="btn_write" class="post-control-btn" href="PostWrite.jsp">작성</a>
+					</div>       
+				</div>
+			</div>
 		</div>
-	</div>
-</div>   
+	</div>   
 </body>
 </html>

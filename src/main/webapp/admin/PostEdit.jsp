@@ -20,7 +20,7 @@ PostModel post = crud.get_post(
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Post <%=post.title %></title>
+    <title>Post Edit <%=post.title %></title>
 
     <!-- Custom fonts for this template-->
     <link href="../css/fontawesome/all.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@ PostModel post = crud.get_post(
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../board/css/styles.css" rel="stylesheet">
 
 </head>
 <body id="page-top">
@@ -52,8 +52,9 @@ PostModel post = crud.get_post(
 					</div>                       
 				</div>
 				<div style="display:flex; flex-flow:row;">
+				<div style="flex:1;"></div>
 					<button id="btn_save" class="post-control-btn">저장</button>
-					<a id="btn_cancel" class="post-control-btn" href="Post.jsp?title=<%=post.title %>&id=<%=post.id %>">취소</a>
+					<a id="btn_cancel" class="post-control-btn" href="PostManage.jsp">취소</a>
 				</div>
 				</form>
 			</div>

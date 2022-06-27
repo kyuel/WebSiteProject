@@ -227,7 +227,7 @@ public class CRUD_OBJECT {
 		
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("insert into POST values ('%s', '%s', '%s')", title, content, id));
+			stmt.executeQuery(String.format("insert into POST values ('%s', '%s', '%s')", title, content.trim(), id));
 			res = true;
 		}
 		catch(SQLException e) {
@@ -244,7 +244,7 @@ public class CRUD_OBJECT {
 		
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("update post set TITLE='%s', CONTENT='%s' where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content, title_old, content_old, id));
+			stmt.executeQuery(String.format("update post set TITLE='%s', CONTENT='%s' where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content.trim(), title_old, content_old.trim(), id));
 			res = true;
 		}
 		catch(SQLException e) {
@@ -260,7 +260,8 @@ public class CRUD_OBJECT {
 		boolean res;
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("delete POST where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content, id));
+			stmt.executeQuery(String.format("delete POST where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content.trim(), id));
+			System.out.println(title+content+id);
 			res = true;
 		}
 		catch(SQLException e) {

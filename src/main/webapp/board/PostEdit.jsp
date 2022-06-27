@@ -49,7 +49,7 @@ PostModel post = crud.get_post(
 					</div>
 					<div class="card-body">
 						<textarea class="input-content" name="content"><%=post.content %></textarea>
-					</div>                       
+					</div>
 				</div>
 				<div style="display:flex; flex-flow:row;">
 					<div style="flex:1;"></div>

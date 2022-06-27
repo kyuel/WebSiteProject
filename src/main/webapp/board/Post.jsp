@@ -37,44 +37,7 @@ PostModel post = crud.get_post(
     <div id="wrapper">
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-               <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                  <a class="btn btn-link mr-3" href="Posts.jsp">
-                  	◀
-                  </a>
-					<ul class="navbar-nav ml-auto">                       
-					<li class="nav-item dropdown no-arrow">
-						<a class="nav-link" href="#" role="button" onclick="document.querySelector('#user_dropdown').style.display='block'">
-							<img class="img-profile" src="../img/sign-<%=Stores.is_login ? "out" : "in" %>-alt.svg">
-						</a>
-                           
-                           <div class="dropdown-menu dropdown-menu-right shadow" id="user_dropdown">
-								<%
-								if(Stores.is_login){
-								%>
-									<div class="dropdown-item" onclick="document.querySelector('#user_dropdown').style.display='none'">
-										<%= Stores.user.id %>
-									</div>
-									<a class="dropdown-item" href="#" onclick="document.querySelector('#user_dropdown').style.display='none'">
-										Logout
-									</a>
-								<%	
-								}
-								else{
-								%>
-									<a class="dropdown-item" href="#" onclick="document.querySelector('#user_dropdown').style.display='none'">
-										Login
-									</a>
-									<a class="dropdown-item" href="#" onclick="document.querySelector('#user_dropdown').style.display='none'">
-										Sign-up
-									</a>
-								<%
-								}
-								%>
-                           </div>
-                       </li>
-                    </ul>
-                </nav>
-				<div class="container-fluid">
+				<div style="padding-top: 1.5rem;" class="container-fluid">
                             <!-- Circle Buttons -->
 					<div class="card shadow mb-4" id="post_area">
 						<div class="card-header py-3">
@@ -90,11 +53,13 @@ PostModel post = crud.get_post(
 					<div style="display:flex; flex-flow:row;">
                    	 	<div style="flex:1;"></div>
                    	 	<a id="btn_edit" class="post-control-btn" href="PostEdit.jsp?title=<%=post.title %>&id=<%=post.id %>">수정</a>
-                   	 	<button id="btn_delete" class="post-control-btn">삭제</button>
+                   	 	<a onclick="return confirm('정말로 삭제하시겠습니까?')" 
+									href="TryPostDelete.jsp?title=<%=post.title %>&content=<%=post.content %>&id=<%=post.id %>" 
+									class="post-control-btn" id="btn_delete">삭제</a>
                    	</div>
 				<%
 				}
-				%>                	 
+				%>	 
 			</div>
 		</div>
 	</div>                

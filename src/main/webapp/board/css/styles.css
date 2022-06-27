@@ -34,6 +34,9 @@
 	background-color: white;
 	color: black;
 }
+a.post-control-btn {
+	text-align: center;
+}
 .post-control-btn:active {
 	box-shadow: inset 0 0 10px lightgrey;
 }
