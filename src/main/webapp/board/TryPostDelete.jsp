@@ -7,9 +7,10 @@
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	String id = request.getParameter("id");
+	String num = request.getParameter("num");
 	
 	CRUD_OBJECT crud = new CRUD_OBJECT(application);
-	boolean res = crud.delete_post(title, content, id);
+	boolean res = crud.delete_post(title, content, id, num);
 	if(res){
 		response.sendRedirect("Posts.jsp");
 	}

@@ -1,3 +1,4 @@
+
 .row {
   display: flex;
   flex-flow: column;
@@ -45,4 +46,76 @@
 .edit_delete {
 	text-align: right;
 	margin-bottom:20px;
+}
+  .google_map {
+	height: 500px;
+}
+  .google_map iframe {
+	width: 100%;
+	height: 100%;
+}
+  .cnt_direction {
+	margin-top: 40px;
+}
+  .cnt_direction p {
+	margin: 0;
+}
+  .cnt_direction > div {
+	float: left;
+	width: 48%;
+}
+  .cnt_direction > div + div {
+	margin-left: 4%;
+}
+  .cnt_direction .dir_tit {
+	font-size: 20px;
+	padding: 10px 5%;
+	background: #0ac6af;
+	color: #fff;
+}
+  .cnt_direction > div > div {
+	padding: 10px 5%;
+}
+  .cnt_direction .dir_subtit {
+	position: relative;
+	font-size: 18px;
+	padding-left: 20px;
+	color: coral;
+}
+  .cnt_direction .dir_subtit:before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #0ac6af;
+}
+  .cnt_direction .dir_subtit + p {
+	padding: 4px 0 12px;
+}
+ .cnt_direction .direction1 div p {
+	position: relative;
+	padding-left: 20px;
+	padding-bottom: 4px;
+	color: black;
+	font-size:15px;
+}
+  .cnt_direction .direction2 div p {
+	position: relative;
+	padding-left: 20px;
+	padding-bottom: 4px;
+	color: black;
+	font-size:15px;
+}
+  .cnt_direction .direction2 div p:before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #0ac6af
 }

@@ -41,11 +41,20 @@
 		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 			<!-- Sidebar - Brand -->
 			<div class="sidebar-brand d-flex align-items-center justify-content-center">
-				<div class="sidebar-brand-text mx-3">일단 보류</div>
-			</div>
-	        <!-- Divider -->
-			<hr class="sidebar-divider">
-			<!-- Heading -->
+                <div class="sidebar-brand-text mx-3">
+                	<a style="color:white; text-decoration: none;" href="../mainpage/MainPage.jsp">
+                		일단 보류
+                	</a>
+                </div>
+            </div>
+	        <!-- Heading -->
+            <div class="sidebar-heading">
+                Notification Area
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="../notice/OurPlace.jsp">
+                    <span>OurPlace</span></a>
+            </li>
 			<div class="sidebar-heading">
 				Board Area
 			</div>

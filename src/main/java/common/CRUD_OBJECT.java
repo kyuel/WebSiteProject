@@ -179,12 +179,13 @@ public class CRUD_OBJECT {
 		this.open();
 		try {
 			Statement stmt = this.con.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from post order by TITLE asc");
+			ResultSet rs = stmt.executeQuery("select * from post order by NUM desc");
 			while(rs.next()) {
 				models.add(new PostModel(
 						rs.getString("TITLE"),
 						rs.getString("CONTENT"),
-						rs.getString("ID")
+						rs.getString("ID"),
+						rs.getString("NUM")
 						));
 			}
 		}
@@ -198,27 +199,27 @@ public class CRUD_OBJECT {
 		return arr;
 	}
 	
-	public PostModel get_post(String title, String id) {
+	public PostModel get_post(String title, String id, String num) {
 		PostModel model = null;
 		this.open();
 		try {
 			Statement stmt = this.con.createStatement();
-			ResultSet rs = stmt.executeQuery(String.format("select * from POST where TITLE='%s' and ID='%s' ", title, id));
+			ResultSet rs = stmt.executeQuery(String.format("select * from POST where TITLE='%s' and ID='%s' and NUM='%s'", title, id, num));
 			while(rs.next()) {
 				model = new PostModel(
 						rs.getString("TITLE"),
 						rs.getString("CONTENT"),
-						rs.getString("ID")
+						rs.getString("ID"),
+						rs.getString("NUM")
 						);
 			}
 			
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
-			model = new PostModel("", "", "");
+			model = new PostModel("", "", "", "");
 		}
 		this.close();
-		System.out.println(model.title);
 		return model;
 	}
 	public boolean register_post(String title, String content, String id) {
@@ -227,7 +228,7 @@ public class CRUD_OBJECT {
 		
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("insert into POST values ('%s', '%s', '%s')", title, content.trim(), id));
+			stmt.executeQuery(String.format("insert into POST values ('%s', '%s', '%s', seq_board.nextval)", title, content.trim(), id));
 			res = true;
 		}
 		catch(SQLException e) {
@@ -238,13 +239,13 @@ public class CRUD_OBJECT {
 		this.close();
 		return res;
 	}
-	public boolean update_post(String title, String content,  String title_old, String content_old, String id) {
+	public boolean update_post(String title, String content,  String title_old, String content_old, String id, String num) {
 		boolean res;
 		this.open();
 		
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("update post set TITLE='%s', CONTENT='%s' where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content.trim(), title_old, content_old.trim(), id));
+			stmt.executeQuery(String.format("update post set TITLE='%s', CONTENT='%s' where TITLE='%s' and CONTENT='%s' and ID='%s' and NUM= '%s'", title, content.trim(), title_old, content_old.trim(), id, num));
 			res = true;
 		}
 		catch(SQLException e) {
@@ -255,13 +256,12 @@ public class CRUD_OBJECT {
 		this.close();
 		return res;
 	}
-	public boolean delete_post(String title, String content, String id) {
+	public boolean delete_post(String title, String content, String id, String num) {
 		this.open();
 		boolean res;
 		try {
 			Statement stmt = this.con.createStatement();
-			stmt.executeQuery(String.format("delete POST where TITLE='%s' and CONTENT='%s' and ID='%s'", title, content.trim(), id));
-			System.out.println(title+content+id);
+			stmt.executeQuery(String.format("delete POST where TITLE='%s' and CONTENT='%s' and ID='%s' and NUM='%s'", title, content.trim(), id, num));
 			res = true;
 		}
 		catch(SQLException e) {

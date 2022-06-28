@@ -7,12 +7,13 @@
 	String title_old = request.getParameter("title_old");
 	String content_old = request.getParameter("content_old");	
 	String post_id = request.getParameter("id");
+	String num = request.getParameter("num");
 
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	
 	CRUD_OBJECT crud = new CRUD_OBJECT(application);
-	boolean res = crud.update_post(title, content, title_old, content_old, post_id);
+	boolean res = crud.update_post(title, content, title_old, content_old, post_id, num);
 	if(res){
 		response.sendRedirect("PostManage.jsp");
 	}

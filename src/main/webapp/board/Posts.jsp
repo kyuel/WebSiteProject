@@ -86,7 +86,7 @@
 					%>
 						<div class="card shadow mb-4">	
 							<div class="card-header py-3">
-								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
+								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>&num=<%=posts[i].num%>">
 									<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
 								</a>
 							</div>

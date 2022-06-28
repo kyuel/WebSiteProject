@@ -11,7 +11,8 @@
 CRUD_OBJECT crud = new CRUD_OBJECT(application);
 PostModel post = crud.get_post(
 		request.getParameter("title"),
-		request.getParameter("id")
+		request.getParameter("id"),
+		request.getParameter("num")
 		);
 %>
     <meta charset="utf-8">
@@ -43,6 +44,7 @@ PostModel post = crud.get_post(
 				<input type="text" value="<%=post.title %>" name="title_old" style="display:none;">
 				<input type="text" value="<%=post.content %>" name="content_old" style="display:none;">
 				<input type="text" value="<%=post.id %>" name="id" style="display:none;">
+				<input type="text" value="<%=post.num %>" name="num" style="display:none;">
 				<div class="card shadow mb-4" id="post_area">
 					<div class="card-header py-3">
 						<input class="input-title" type="text" value="<%=post.title %>" name="title">

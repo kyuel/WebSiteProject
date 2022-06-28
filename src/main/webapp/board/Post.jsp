@@ -11,7 +11,8 @@
 CRUD_OBJECT crud = new CRUD_OBJECT(application);
 PostModel post = crud.get_post(
 		request.getParameter("title"),
-		request.getParameter("id")
+		request.getParameter("id"),
+		request.getParameter("num")
 		);
 %>
     <meta charset="utf-8">
@@ -52,9 +53,9 @@ PostModel post = crud.get_post(
 				%>
 					<div style="display:flex; flex-flow:row;">
                    	 	<div style="flex:1;"></div>
-                   	 	<a id="btn_edit" class="post-control-btn" href="PostEdit.jsp?title=<%=post.title %>&id=<%=post.id %>">수정</a>
+                   	 	<a id="btn_edit" class="post-control-btn" href="PostEdit.jsp?title=<%=post.title %>&id=<%=post.id %>&num=<%=post.num %>">수정</a>
                    	 	<a onclick="return confirm('정말로 삭제하시겠습니까?')" 
-									href="TryPostDelete.jsp?title=<%=post.title %>&content=<%=post.content %>&id=<%=post.id %>" 
+									href="TryPostDelete.jsp?title=<%=post.title %>&content=<%=post.content %>&id=<%=post.id %>&num=<%=post.num %>" 
 									class="post-control-btn" id="btn_delete">삭제</a>
                    	</div>
 				<%

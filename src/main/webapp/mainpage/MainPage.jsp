@@ -9,11 +9,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<%
 		CRUD_OBJECT crud = new CRUD_OBJECT(application);
-		//UserModel model = crud.get_user("admin", "admin");
 		PostModel[] posts = crud.get_posts();
 	%>
     <meta charset="utf-8">
@@ -22,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>Home</title>
 
     <!-- Custom fonts for this template-->
     <link href="../css/fontawesome/all.min.css" rel="stylesheet" type="text/css">
@@ -44,12 +42,23 @@
 
             <!-- Sidebar - Brand -->
             <div class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class="sidebar-brand-text mx-3">일단 보류</div>
+                <div class="sidebar-brand-text mx-3">
+                	<a style="color:white; text-decoration: none;" href="MainPage.jsp">
+                		일단 보류
+                	</a>
+                </div>
             </div>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
-            <!-- Heading -->
+			<div class="sidebar-heading">
+                Notification Area
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                 <a class="nav-link" href="../notice/OurPlace.jsp">
+                    <span>OurPlace</span></a>
+            </li>
+
             <div class="sidebar-heading">
                 Board Area
             </div>
@@ -130,7 +139,7 @@
 					%>
 						<div class="card shadow mb-4">
 							<div class="card-header py-3">
-								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>">
+								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>&num=<%=posts[i].num %>">
 						        	<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
 						        </a>
 						    </div>

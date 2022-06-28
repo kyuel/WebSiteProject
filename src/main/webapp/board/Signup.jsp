@@ -21,7 +21,7 @@
 	<div class="flex-row">
 		<div style="flex:1;"></div>
 		<form class="login-area" action="TrySignup.jsp">
-			<label class="title">Login</label>
+			<label class="title">Sign-Up</label>
 			<div class="flex-row">
 				<label class="category-field">ID</label>
 				<input type="text" class="input-field" id="inp_id" name="id">
