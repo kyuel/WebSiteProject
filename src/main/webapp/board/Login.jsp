@@ -5,6 +5,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/login.css">
+        <title>Login</title>
     </head>
     <body class="flex-col">
         <div style="flex:1;"></div>
@@ -23,7 +24,7 @@
                 <div class="flex-row">
                     <div style="flex:1;"></div>
                     <input type="submit" class="login-buttons" id="btn_login" value="Login">
-                    <a class="login-buttons" id="btn_cancel" href="../<%=request.getParameter("cancel_url") %>">Cancel</a>
+                    <a class="login-buttons" id="btn_cancel" href="../mainpage/MainPage.jsp">Cancel</a>
                 </div>
             </form>
             <div style="flex:1;"></div>

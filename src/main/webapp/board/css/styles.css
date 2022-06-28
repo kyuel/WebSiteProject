@@ -43,6 +43,10 @@ a.post-control-btn {
 .post-control-btn:not(:last-child) {
 	margin-right: 5px;
 }
+.card-header[is_flex="true"] {
+	display: flex;
+	flex-flow: row;
+}
 #btn_edit, #btn_save {
 	background-color: slateblue;
 	color: white;

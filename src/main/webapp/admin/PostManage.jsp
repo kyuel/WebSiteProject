@@ -132,11 +132,11 @@
 			<div class="container-fluid">
                    <!-- Page Heading -->
 				<h1 class="h3 mb-4 text-gray-800">Posts Manage</h1>
-					<table class="table-user">
+					<table class="table-post">
 						<thead>
 							<tr>
 								<th>TITLE</th>
-	                   			<th>CONTENT</th>
+								<th>CONTENT</th>
 	                   			<th>ID</th>
 	                   			<th></th>
                    			</tr>
@@ -147,6 +147,7 @@
 						%>
 							<tr>
 								<td><%=posts[i].title %></td>
+								<td><%=posts[i].content %></td>
 								<td><%=posts[i].id %></td>
 								<td>
 									<a href="PostEdit.jsp?title=<%=posts[i].title %>&content=<%=posts[i].content %>&id=<%=posts[i].id%>&num=<%=posts[i].num %>" class="button-user-control">수정</a>

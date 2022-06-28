@@ -5,19 +5,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-<%
-Stores.is_login = false;
-Stores.user = new UserModel("", "", "");
-%>
+		<%
+		Stores.is_login = false;
+		Stores.user = new UserModel("", "", "");
+		%>
+		<title>Loading</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/login.css">
-        <meta http-equiv="Refresh" content="5;url=../mainpage/MainPage.jsp">
+        <meta http-equiv="Refresh" content="2;url=../mainpage/MainPage.jsp">
     </head>
     <body class="flex-col">
         <div style="flex:1;"></div>
         <div class="flex-row">
             <div style="flex:1;"></div>
-            <label style="text-align:center;font-size:40px;">Logout...<br>Go to the main page in 5 seconds</label>
+            <label style="text-align:center;font-size:40px;">Now Logout...<br>GoodBye.. :(</label>
             <div style="flex:1;"></div>
         </div>
         <div style="flex:1;"></div>

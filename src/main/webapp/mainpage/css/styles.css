@@ -1,4 +1,8 @@
 .row {
-  display: flex;
-  flex-flow: column;
+	display: flex;
+	flex-flow: column;
+}
+.card-header[is_flex="true"] {
+	display: flex;
+	flex-flow: row;
 }

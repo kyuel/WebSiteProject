@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>DashBoard</title>
 
     <!-- Custom fonts for this template-->
     <link href="../css/fontawesome/all.min.css" rel="stylesheet" type="text/css">
@@ -85,10 +85,12 @@
 					for(int i = 0 ; i<posts.length ; i++){
 					%>
 						<div class="card shadow mb-4">	
-							<div class="card-header py-3">
+							<div class="card-header py-3" is_flex="true">
 								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>&num=<%=posts[i].num%>">
 									<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
 								</a>
+								<div style="flex:1;"></div>
+								 <h6 style="text-align:right;">Writer:<%=posts[i].id %></h6>
 							</div>
 							<div class="card-body">
 								<p><%=posts[i].content %></p>
@@ -96,11 +98,15 @@
 						</div>
 					<%	
 					}
-					%>      
+					if(Stores.is_login){
+					%>     
 					<div style="display:flex; flex-flow:row;">
 						<div style="flex:1;"></div>
 	                  		 <a id="btn_write" class="post-control-btn" href="PostWrite.jsp">작성</a>
-					</div>       
+					</div>
+					<%
+					}
+					%>       
 				</div>
 			</div>
 		</div>

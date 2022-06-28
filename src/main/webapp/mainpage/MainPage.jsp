@@ -135,13 +135,15 @@
                    <!-- Page Heading -->
                    <div class="row">
 					<%
-					for(int i = 0 ; i<posts.length ; i++){
+					for(int i = 0 ; i<3 ; i++){
 					%>
 						<div class="card shadow mb-4">
-							<div class="card-header py-3">
+							<div class="card-header py-3" is_flex="true">
 								<a href="../board/Post.jsp?title=<%=posts[i].title %>&id=<%=posts[i].id %>&num=<%=posts[i].num %>">
-						        	<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>
+						        	<h6 class="m-0 font-weight-bold text-primary"><%=posts[i].title %></h6>	
 						        </a>
+						        <div style="flex:1;"></div>
+						        <h6 style="text-align:right;">Writer:<%=posts[i].id %></h6>
 						    </div>
 						    <div class="card-body">
 						        <p><%=posts[i].content %></p>

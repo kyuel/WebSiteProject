@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/login.css">
+    <title>SignUp!</title>
 </head>
 <body class="flex-col">
 	<%

@@ -93,7 +93,6 @@ public class CRUD_OBJECT {
 		}
 		
 		this.close();
-		System.out.println(model.empty());
 		return model;
 	}
 	
@@ -119,7 +118,6 @@ public class CRUD_OBJECT {
 		}
 		
 		this.close();
-		System.out.println(model.empty());
 		return model;
 	}
 	
@@ -193,7 +191,6 @@ public class CRUD_OBJECT {
 			e.printStackTrace();
 		}
 		this.close();
-		System.out.println(models.size());
 		PostModel[] arr = new PostModel[models.size()];
 		arr = models.toArray(arr);
 		return arr;

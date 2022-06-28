@@ -41,8 +41,10 @@ PostModel post = crud.get_post(
 				<div style="padding-top: 1.5rem;" class="container-fluid">
                             <!-- Circle Buttons -->
 					<div class="card shadow mb-4" id="post_area">
-						<div class="card-header py-3">
+						<div class="card-header py-3" is_flex="true">
 							<h6 class="m-0 font-weight-bold text-primary"><%=post.title %></h6>
+							<div style="flex:1;"></div>
+							<h6 style="text-align:right;">Witer:<%=post.id %></h6>
 						</div>
 						<div class="card-body">
 							<p><%=post.content %></p>   

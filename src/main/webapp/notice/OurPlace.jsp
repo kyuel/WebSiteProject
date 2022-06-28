@@ -81,7 +81,7 @@
 
             <!-- Nav Item -  -->
             <li class="nav-item">
-                <a class="nav-link" href="../notice/OurPlace.jsp">
+                <a class="nav-link" href="../admin/UserManage.jsp">
                     <span>User Manage</span></a>
             </li>
 

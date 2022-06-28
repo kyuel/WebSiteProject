@@ -4,8 +4,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Refresh" content="5;url=Login.jsp">
+        <meta http-equiv="Refresh" content="1.1;url=Login.jsp">
         <link rel="stylesheet" href="css/login.css">
+        <title>Fail....</title>
     </head>
     <body class="flex-col">
         <div style="flex:1;"></div>
